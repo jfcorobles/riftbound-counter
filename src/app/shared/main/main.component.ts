@@ -17,6 +17,10 @@ export class MainComponent {
   }
 
   removePlayer(playerId: number) {
-  this.playerService.removePlayer(playerId);
-}
+    this.playerService.removePlayer(playerId);
+  }
+  
+  changePlayerName(event: { id: number; newName: string }) {
+    this.playerService.updatePlayerName(event.id, event.newName);
+  }
 }

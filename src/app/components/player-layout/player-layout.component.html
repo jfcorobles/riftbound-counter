@@ -9,7 +9,8 @@
             <div class="flex-1 flex justify-center items-center">
                 <app-player-card class="w-full h-[50%] max-w-screen-sm" [player]="players[0]"
                     (scoreChange)="onScoreChange(players[0].id, $event)"
-                    (remove)="onRemove(players[0].id)">
+                    (remove)="onRemove(players[0].id)"                    
+                    (nameChange)="onPlayerNameChange($event)">
                 </app-player-card>
             </div>
         </div>
@@ -24,14 +25,16 @@
             <div class="flex-1 flex justify-center items-center rotate-180">
                 <app-player-card class="w-full h-[50%] max-w-screen-sm" [player]="players[0]"
                     (scoreChange)="onScoreChange(players[0].id, $event)"
-                    (remove)="onRemove(players[0].id)">
+                    (remove)="onRemove(players[0].id)"                    
+                    (nameChange)="onPlayerNameChange($event)">
                 </app-player-card>
             </div>
             <!-- Jugador 2 - Abajo -->
             <div class="flex-1 flex justify-center items-center">
                 <app-player-card class="w-full h-[50%] max-w-screen-sm" [player]="players[1]"
                     (scoreChange)="onScoreChange(players[1].id, $event)"
-                    (remove)="onRemove(players[1].id)">
+                    (remove)="onRemove(players[1].id)"                    
+                    (nameChange)="onPlayerNameChange($event)">
                 </app-player-card>
             </div>
         </div>
@@ -44,14 +47,16 @@
         <div class="grid grid-cols-2 rotate-180">
             @for(player of players.slice(0, 2); track player.id){
             <app-player-card [player]="player" (scoreChange)="onScoreChange(player.id, $event)"
-                (remove)="onRemove(player.id)">
+                (remove)="onRemove(player.id)"                    
+                    (nameChange)="onPlayerNameChange($event)">
             </app-player-card>
             }
         </div>
         <div class="grid grid-cols-1 mt-6">
             @for(player of players.slice(2, 3); track player.id){
                 <app-player-card [player]="player" (scoreChange)="onScoreChange(player.id, $event)"
-                    (remove)="onRemove(player.id)">
+                    (remove)="onRemove(player.id)"                    
+                    (nameChange)="onPlayerNameChange($event)">
                 </app-player-card>
                 }
         </div>
@@ -64,17 +69,43 @@
         <div class="grid grid-cols-2 rotate-180">
             @for(player of players.slice(0, 2); track player.id){
             <app-player-card [player]="player" (scoreChange)="onScoreChange(player.id, $event)"
-                (remove)="onRemove(player.id)">
+                (remove)="onRemove(player.id)"                    
+                (nameChange)="onPlayerNameChange($event)">
             </app-player-card>
             }
         </div>
         <div class="grid grid-cols-2 mt-6">
             @for(player of players.slice(2, 4); track player.id){
             <app-player-card [player]="player" (scoreChange)="onScoreChange(player.id, $event)"
-                (remove)="onRemove(player.id)">
+                (remove)="onRemove(player.id)"                    
+                (nameChange)="onPlayerNameChange($event)">
             </app-player-card>
             }
         </div>
     </ng-container>
     }
 </div>
+
+
+  @if(playerService.selectedPlayer()){
+    <div class="fixed inset-0 bg-gray-600/20 backdrop-blur-sm flex items-center justify-center z-50">
+      <div class="relative bg-gray-800 p-6 rounded-lg text-white w-80 shadow-xl">
+        <button 
+        (click)="cancelEdit()"
+        aria-label="Close modal"
+        class="absolute top-3 right-3 text-red-600 hover:text-red-700 text-2xl font-bold leading-none cursor-pointer"
+      >
+        &times;
+      </button>
+        <h3 class="text-xl font-bold mb-4">Player Name</h3>
+        <input 
+          [(ngModel)]="newName"
+          class="w-full p-2 rounded bg-gray-700 text-white mb-4 border border-gray-600 focus:outline-none focus:ring"
+          placeholder="Enter new name"
+        />
+        <div class="flex justify-end gap-2">
+          <button (click)="saveName()" [disabled]="!newName.trim()"  class="px-4 py-2 bg-blue-600 rounded hover:bg-blue-500 disabled:opacity-50 disabled:cursor-not-allowed">Save</button>
+        </div>
+      </div>
+    </div>
+  }

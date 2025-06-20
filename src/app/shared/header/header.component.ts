@@ -11,11 +11,12 @@ import { PlayerService } from '../../services/player.service';
 export class HeaderComponent implements OnInit {
   constructor(private playerService: PlayerService) { }
 
+  showResetModal = false;
   diceResult: number | null = null; deferredPrompt: any;
 
   ngOnInit() {
     window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault(); 
+      e.preventDefault();
       this.deferredPrompt = e;
 
       const installBtn = document.getElementById('install-btn');
@@ -37,6 +38,13 @@ export class HeaderComponent implements OnInit {
 
   resetScores() {
     this.playerService.resetScores();
+    this.closeResetModal();
+  }
+
+
+  resetPlayers() {
+    this.playerService.resetPlayers();
+    this.closeResetModal();
   }
 
   rollDice() {
@@ -45,6 +53,14 @@ export class HeaderComponent implements OnInit {
 
   closeDiceModal() {
     this.diceResult = null;
+  }
+
+  openResetModal() {
+    this.showResetModal = true;
+  }
+
+  closeResetModal() {
+    this.showResetModal = false;
   }
 
 }

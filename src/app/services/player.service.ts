@@ -6,9 +6,9 @@ import { Player } from '../models/player.model';
 })
 export class PlayerService {
 
-  private STORAGE_KEY ="PlaySession";
+  private STORAGE_KEY = "PlaySession";
 
- constructor() {
+  constructor() {
     const cached = localStorage.getItem(this.STORAGE_KEY);
     if (cached) {
       try {
@@ -31,25 +31,35 @@ export class PlayerService {
     { id: 0, name: 'Player 1', score: 0 }
   ]);
 
+  selectedPlayer = signal<Player | null>(null);
+
   setPlayers(count: number) {
-  this.idCounter = 0;
-  const newPlayers: Player[] = [];
+    this.idCounter = 0;
+    const newPlayers: Player[] = [];
 
-  for (let i = 0; i < count; i++) {
-    newPlayers.push({
-      id: this.idCounter++,
-      name: `Player ${i + 1}`,
-      score: 0
-    });
+    for (let i = 0; i < count; i++) {
+      newPlayers.push({
+        id: this.idCounter++,
+        name: `Player ${i + 1}`,
+        score: 0
+      });
+    }
+
+    this.players.set(newPlayers);
   }
-
-  this.players.set(newPlayers);
-}
 
   updateScore(id: number, delta: number) {
     this.players.update(players =>
       players.map(player =>
         player.id === id ? { ...player, score: player.score + delta } : player
+      )
+    );
+  }
+
+  updatePlayerName(id: number, newName: string) {
+    this.players.update(players =>
+      players.map(player =>
+        player.id === id ? { ...player, name: newName } : player
       )
     );
   }
@@ -61,8 +71,18 @@ export class PlayerService {
   }
 
   resetScores() {
-  this.players.update(players =>
-    players.map(player => ({ ...player, score: 0 }))
+    this.players.update(players =>
+      players.map(player => ({ ...player, score: 0 }))
+    );
+  }
+
+  resetPlayers() {
+  this.players.update(players => 
+    players.map((player, index) => ({
+      ...player,
+      score: 0,
+      name: `Player ${index + 1}`
+    }))
   );
 }
 }

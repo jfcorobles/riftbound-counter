@@ -16,10 +16,11 @@
         class="bg-gray-700 w-8 h-8 text-white rounded-full transition cursor-pointer flex items-center justify-center">
         <i class="fa-solid fa-dice-six"></i>
       </button>
-      <button (click)="resetScores()" class=" bg-gray-700 w-8 h-8 text-white rounded-full transition cursor-pointer">
+      <button (click)="openResetModal()" class=" bg-gray-700 w-8 h-8 text-white rounded-full transition cursor-pointer">
         <i class="fa-solid fa-arrow-rotate-right"></i>
       </button>
-      <button id="install-btn" style="display: none;" class=" bg-gray-700 w-8 h-8 text-white rounded-full transition cursor-pointer">
+      <button id="install-btn" style="display: none;"
+        class=" bg-gray-700 w-8 h-8 text-white rounded-full transition cursor-pointer">
         <i class="fa-solid fa-download"></i>
       </button>
     </div>
@@ -28,7 +29,7 @@
 
 @if (diceResult !== null) {
 <div class="fixed inset-0 flex items-center justify-center bg-gray-600/20 z-50 backdrop-blur-sm">
-  <div class="bg-gray-800 text-white p-6 rounded-lg shadow-lg text-center">
+  <div class=" bg-gray-800 text-white p-6 rounded-lg shadow-lg text-center">
     <h2 class="text-2xl font-bold mb-4"><i class="fa-solid fa-dice-six"></i> Dice Result</h2>
     <div class="text-5xl font-extrabold mb-4">{{ diceResult }}</div>
     <button (click)="closeDiceModal()" class="mt-2 bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600">
@@ -38,4 +39,31 @@
 </div>
 }
 
+@if(showResetModal){
+  <div class="fixed inset-0 flex items-center justify-center bg-gray-600/20 z-50 backdrop-blur-sm">
+    <div class="relative bg-gray-800 p-6 rounded-lg max-w-sm w-full text-white text-center">
+      <button 
+        (click)="closeResetModal()"
+        aria-label="Close modal"
+        class="absolute top-3 right-3 text-red-600 hover:text-red-700 text-2xl font-bold leading-none cursor-pointer"
+      >
+        &times;
+      </button>
+
+      <h2 class="text-xl font-bold mb-4">Reset Options</h2>
+      <button 
+        (click)="resetScores()" 
+        class="w-full bg-gray-700 hover:bg-gray-600 py-2 rounded mb-3 transition cursor-pointer"
+      >
+        Reset Scores
+      </button>
+      <button 
+        (click)="resetPlayers()" 
+        class="w-full bg-gray-700 hover:bg-gray-600 py-2 rounded mb-3 transition cursor-pointer"
+      >
+        Reset Players (Scores + Names)
+      </button>
+    </div>
+  </div>
+}
 <div class="pt-14"></div>
