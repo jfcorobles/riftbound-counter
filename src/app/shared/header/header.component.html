@@ -1,0 +1,39 @@
+<header class="fixed top-0 left-0 right-0 bg-gray-900 text-white shadow z-50">
+  <div class="max-w-screen-lg mx-auto flex justify-between items-center px-4 py-3">
+
+    <div class="flex gap-2">
+      <span class="w-8 h-8 flex justify-center items-center bg-gray-700 rounded-full">
+        <i class="fa-solid fa-user text-white text-base"></i>
+      </span>
+      <button *ngFor="let count of [1, 2, 3, 4]" (click)="setPlayers(count)"
+        class="bg-gray-700 hover:bg-gray-600 text-white px-3 py-1 rounded transition cursor-pointer">
+        {{ count }}
+      </button>
+    </div>
+
+    <div class="flex gap-2">
+       <button (click)="rollDice()"
+        class="bg-gray-700 w-8 h-8 text-white rounded-full transition cursor-pointer flex items-center justify-center">
+        <i class="fa-solid fa-dice-six"></i>
+      </button>
+      <button (click)="resetScores()"
+        class=" bg-gray-700 w-8 h-8 text-white rounded-full transition cursor-pointer">
+        <i class="fa-solid fa-arrow-rotate-right"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+@if (diceResult !== null) {
+  <div class="fixed inset-0 flex items-center justify-center bg-gray-600/20 z-50 backdrop-blur-sm">
+    <div class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-6 rounded-lg shadow-lg text-center">
+      <h2 class="text-2xl font-bold mb-4"><i class="fa-solid fa-dice-six"></i> Dice Result</h2>
+      <div class="text-5xl font-extrabold mb-4">{{ diceResult }}</div>
+      <button (click)="closeDiceModal()" class="mt-2 bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600">
+        Close
+      </button>
+    </div>
+  </div>
+}
+
+<div class="pt-14"></div>

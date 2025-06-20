@@ -1,0 +1,9 @@
+<!-- <main>
+    <router-outlet />
+</main> -->
+
+<app-player-layout 
+    [players]="playerService.players()" 
+    [onScoreChange]="changeScore.bind(this)"
+    [onRemove]="removePlayer.bind(this)">
+</app-player-layout>

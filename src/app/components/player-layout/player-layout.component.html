@@ -1,0 +1,80 @@
+<div class="bg-gray-100 mt-6 dark:bg-gray-800 text-gray-900 dark:text-gray-100 flex flex-col justify-center">
+
+     <!-- Layout para 1 jugadores -->
+    @if(players.length === 1){
+    <ng-container>
+        <div class="h-full flex flex-col gap-6" >
+
+            <!-- Jugador 1 - Arriba, volteado -->
+            <div class="flex-1 flex justify-center items-center">
+                <app-player-card class="w-full h-[50%] max-w-screen-sm" [player]="players[0]"
+                    (scoreChange)="onScoreChange(players[0].id, $event)"
+                    (remove)="onRemove(players[0].id)">
+                </app-player-card>
+            </div>
+        </div>
+    </ng-container>
+    }
+
+    <!-- Layout para 2 jugadores -->
+    @if(players.length === 2){
+    <ng-container>
+        <div class="h-full flex flex-col gap-6" >
+            <!-- Jugador 1 - Arriba, volteado -->
+            <div class="flex-1 flex justify-center items-center rotate-180">
+                <app-player-card class="w-full h-[50%] max-w-screen-sm" [player]="players[0]"
+                    (scoreChange)="onScoreChange(players[0].id, $event)"
+                    (remove)="onRemove(players[0].id)">
+                </app-player-card>
+            </div>
+            <!-- Jugador 2 - Abajo -->
+            <div class="flex-1 flex justify-center items-center">
+                <app-player-card class="w-full h-[50%] max-w-screen-sm" [player]="players[1]"
+                    (scoreChange)="onScoreChange(players[1].id, $event)"
+                    (remove)="onRemove(players[1].id)">
+                </app-player-card>
+            </div>
+        </div>
+    </ng-container>
+    }
+
+    <!-- Layout para 3 jugadores -->
+    @if(players.length === 3){
+    <ng-container>
+        <div class="grid grid-cols-2 rotate-180">
+            @for(player of players.slice(0, 2); track player.id){
+            <app-player-card [player]="player" (scoreChange)="onScoreChange(player.id, $event)"
+                (remove)="onRemove(player.id)">
+            </app-player-card>
+            }
+        </div>
+        <div class="grid grid-cols-1 mt-6">
+            @for(player of players.slice(2, 3); track player.id){
+                <app-player-card [player]="player" (scoreChange)="onScoreChange(player.id, $event)"
+                    (remove)="onRemove(player.id)">
+                </app-player-card>
+                }
+        </div>
+    </ng-container>
+    }
+
+    <!-- Layout para 4 jugadores -->
+    @if(players.length === 4){
+    <ng-container>
+        <div class="grid grid-cols-2 rotate-180">
+            @for(player of players.slice(0, 2); track player.id){
+            <app-player-card [player]="player" (scoreChange)="onScoreChange(player.id, $event)"
+                (remove)="onRemove(player.id)">
+            </app-player-card>
+            }
+        </div>
+        <div class="grid grid-cols-2 mt-6">
+            @for(player of players.slice(2, 4); track player.id){
+            <app-player-card [player]="player" (scoreChange)="onScoreChange(player.id, $event)"
+                (remove)="onRemove(player.id)">
+            </app-player-card>
+            }
+        </div>
+    </ng-container>
+    }
+</div>
