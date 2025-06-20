@@ -1,0 +1,79 @@
+{
+  "configVersion": 1,
+  "timestamp": 1750441240335,
+  "index": "/riftbound-counter/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/riftbound-counter/favicon.ico",
+        "/riftbound-counter/index.html",
+        "/riftbound-counter/main-335SSGE7.js",
+        "/riftbound-counter/manifest.webmanifest",
+        "/riftbound-counter/polyfills-B6TNHZQ6.js",
+        "/riftbound-counter/styles-XVDHWRMW.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/riftbound-counter/icons/icon-128x128.png",
+        "/riftbound-counter/icons/icon-144x144.png",
+        "/riftbound-counter/icons/icon-152x152.png",
+        "/riftbound-counter/icons/icon-192x192.png",
+        "/riftbound-counter/icons/icon-384x384.png",
+        "/riftbound-counter/icons/icon-512x512.png",
+        "/riftbound-counter/icons/icon-72x72.png",
+        "/riftbound-counter/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/riftbound-counter/favicon.ico": "5489211e32774905e18cdc4f309077e80b8471d2",
+    "/riftbound-counter/icons/icon-128x128.png": "497de38ce0e7e700065cc382439fd718ab3ec462",
+    "/riftbound-counter/icons/icon-144x144.png": "b142654ab39ceec21511adf96d4e0c2b634383f7",
+    "/riftbound-counter/icons/icon-152x152.png": "528169702d4309b2a6e97dc987e16dbf43f8f23e",
+    "/riftbound-counter/icons/icon-192x192.png": "dd1df9d2437e77a1494439c4adcffab2227c38d9",
+    "/riftbound-counter/icons/icon-384x384.png": "99911b203cb96dabe5728cbd4fd1689c765e28e5",
+    "/riftbound-counter/icons/icon-512x512.png": "83d9fd98819a8c7845137802be1046ce49a6c23a",
+    "/riftbound-counter/icons/icon-72x72.png": "32f588aaebb9547f3befab1aa8fa9eb7a379eda9",
+    "/riftbound-counter/icons/icon-96x96.png": "ed2baf8c824703262d80e07af2be51f8ad03c012",
+    "/riftbound-counter/index.html": "82d832d1a1ce1df3fe355ad72effce1449e51cf1",
+    "/riftbound-counter/main-335SSGE7.js": "09d27a1ea0eb9509225f813f579e8087c3006d2b",
+    "/riftbound-counter/manifest.webmanifest": "c18eb2ef6652acac484f49aa346530bba1e5c1fa",
+    "/riftbound-counter/polyfills-B6TNHZQ6.js": "bf76ac291d7f51c1139b7edcf86b359a30c08c64",
+    "/riftbound-counter/styles-XVDHWRMW.css": "d902b99ca5a62fa77ec5dee93c7b310f504a2b45"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
