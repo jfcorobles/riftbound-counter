@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PlayerService } from '../../services/player.service';
 
 @Component({
@@ -8,10 +8,28 @@ import { PlayerService } from '../../services/player.service';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   constructor(private playerService: PlayerService) { }
 
-  diceResult: number | null = null;
+  diceResult: number | null = null; deferredPrompt: any;
+
+  ngOnInit() {
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault(); 
+      this.deferredPrompt = e;
+
+      const installBtn = document.getElementById('install-btn');
+      if (installBtn) {
+        installBtn.style.display = 'block';
+        installBtn.addEventListener('click', () => {
+          this.deferredPrompt.prompt();
+          this.deferredPrompt.userChoice.then(() => {
+            this.deferredPrompt = null;
+          });
+        });
+      }
+    });
+  }
 
   setPlayers(count: number) {
     this.playerService.setPlayers(count);

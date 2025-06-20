@@ -12,28 +12,30 @@
     </div>
 
     <div class="flex gap-2">
-       <button (click)="rollDice()"
+      <button (click)="rollDice()"
         class="bg-gray-700 w-8 h-8 text-white rounded-full transition cursor-pointer flex items-center justify-center">
         <i class="fa-solid fa-dice-six"></i>
       </button>
-      <button (click)="resetScores()"
-        class=" bg-gray-700 w-8 h-8 text-white rounded-full transition cursor-pointer">
+      <button (click)="resetScores()" class=" bg-gray-700 w-8 h-8 text-white rounded-full transition cursor-pointer">
         <i class="fa-solid fa-arrow-rotate-right"></i>
+      </button>
+      <button id="install-btn" style="display: none;" class=" bg-gray-700 w-8 h-8 text-white rounded-full transition cursor-pointer">
+        <i class="fa-solid fa-download"></i>
       </button>
     </div>
   </div>
 </header>
 
 @if (diceResult !== null) {
-  <div class="fixed inset-0 flex items-center justify-center bg-gray-600/20 z-50 backdrop-blur-sm">
-    <div class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-6 rounded-lg shadow-lg text-center">
-      <h2 class="text-2xl font-bold mb-4"><i class="fa-solid fa-dice-six"></i> Dice Result</h2>
-      <div class="text-5xl font-extrabold mb-4">{{ diceResult }}</div>
-      <button (click)="closeDiceModal()" class="mt-2 bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600">
-        Close
-      </button>
-    </div>
+<div class="fixed inset-0 flex items-center justify-center bg-gray-600/20 z-50 backdrop-blur-sm">
+  <div class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-6 rounded-lg shadow-lg text-center">
+    <h2 class="text-2xl font-bold mb-4"><i class="fa-solid fa-dice-six"></i> Dice Result</h2>
+    <div class="text-5xl font-extrabold mb-4">{{ diceResult }}</div>
+    <button (click)="closeDiceModal()" class="mt-2 bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600">
+      Close
+    </button>
   </div>
+</div>
 }
 
 <div class="pt-14"></div>
