@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1750441240335,
+  "timestamp": 1750441490577,
   "index": "/riftbound-counter/index.html",
   "assetGroups": [
     {
@@ -51,7 +51,7 @@
     "/riftbound-counter/icons/icon-512x512.png": "83d9fd98819a8c7845137802be1046ce49a6c23a",
     "/riftbound-counter/icons/icon-72x72.png": "32f588aaebb9547f3befab1aa8fa9eb7a379eda9",
     "/riftbound-counter/icons/icon-96x96.png": "ed2baf8c824703262d80e07af2be51f8ad03c012",
-    "/riftbound-counter/index.html": "82d832d1a1ce1df3fe355ad72effce1449e51cf1",
+    "/riftbound-counter/index.html": "14c8f5120d48d2ebaac455f381b32e438c63bc5d",
     "/riftbound-counter/main-335SSGE7.js": "09d27a1ea0eb9509225f813f579e8087c3006d2b",
     "/riftbound-counter/manifest.webmanifest": "c18eb2ef6652acac484f49aa346530bba1e5c1fa",
     "/riftbound-counter/polyfills-B6TNHZQ6.js": "bf76ac291d7f51c1139b7edcf86b359a30c08c64",
