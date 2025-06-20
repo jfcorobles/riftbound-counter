@@ -10,7 +10,11 @@
         -
         </button>
 
-    <p class="text-4xl font-bold text-blue-400 m-0">{{ player.score }}</p>
+    <p 
+      class="text-4xl font-bold text-blue-400 m-0" 
+      [class.underline]="player.score === 6 || player.score === 9">
+      {{ player.score }}
+    </p>
 
     <button 
       (click)="increment()" 
