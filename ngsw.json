@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1750442433209,
+  "timestamp": 1750450082642,
   "index": "/riftbound-counter/index.html",
   "assetGroups": [
     {
@@ -16,7 +16,7 @@
         "/riftbound-counter/main-33KDG4ME.js",
         "/riftbound-counter/manifest.webmanifest",
         "/riftbound-counter/polyfills-B6TNHZQ6.js",
-        "/riftbound-counter/styles-7IVTT2SW.css"
+        "/riftbound-counter/styles-KBPROJUI.css"
       ],
       "patterns": []
     },
@@ -51,11 +51,11 @@
     "/riftbound-counter/icons/icon-512x512.png": "83d9fd98819a8c7845137802be1046ce49a6c23a",
     "/riftbound-counter/icons/icon-72x72.png": "32f588aaebb9547f3befab1aa8fa9eb7a379eda9",
     "/riftbound-counter/icons/icon-96x96.png": "ed2baf8c824703262d80e07af2be51f8ad03c012",
-    "/riftbound-counter/index.html": "6ad5ee5fbd211b11e33d3e11af0d0aeda60c0050",
+    "/riftbound-counter/index.html": "ed359f616a5db2e87366cb02c478d8e9cc39541e",
     "/riftbound-counter/main-33KDG4ME.js": "c6ca27702dac26ec01fc2a3f457d3ea3c994f78f",
     "/riftbound-counter/manifest.webmanifest": "c18eb2ef6652acac484f49aa346530bba1e5c1fa",
     "/riftbound-counter/polyfills-B6TNHZQ6.js": "bf76ac291d7f51c1139b7edcf86b359a30c08c64",
-    "/riftbound-counter/styles-7IVTT2SW.css": "fa73dd8c65960e474e21a429ba8ce588745b09d9"
+    "/riftbound-counter/styles-KBPROJUI.css": "61ebcbbe1f96808daee39c18778c6f95af9f4988"
   },
   "navigationUrls": [
     {
